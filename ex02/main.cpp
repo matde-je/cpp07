@@ -8,7 +8,6 @@ int main(){
     Array<int> cd(bc);
     Array<int> dc;
     ab = bc;
-    ab = ab;
     bc[0];
     bc[11];
     bc[-1];

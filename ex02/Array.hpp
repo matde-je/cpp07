@@ -53,12 +53,14 @@ Array<T>::Array(const Array &copy) {
 
 template <typename T>
 Array<T> & Array<T>::operator=(const Array &copy) {
-    if (array != NULL)
-		delete [] array;
-    this->array = new T[copy.size];
-    this->size = copy.size;
-    for (int i = 0; i < this->size; i++)
-        this->array[i] = copy.array[i];
+    if (this != &copy) {
+        if (array != NULL)
+            delete [] array;
+        this->array = new T[copy.size];
+        this->size = copy.size;
+        for (int i = 0; i < this->size; i++)
+            this->array[i] = copy.array[i];
+    }
     return *this;
 }
 
